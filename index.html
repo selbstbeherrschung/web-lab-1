@@ -7,8 +7,74 @@
         Lab 1
     </title>
     <link rel="icon" type="image/png" href="resources/icon.png">
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
     <script src="clientScript/Script.js"></script>
+    <style>
+
+        header{
+            font-family: sans-serif;
+            font-size: 20px;
+            color: darkblue;
+            text-align: center;
+        }
+
+        table{
+            font-size: 12px;
+        }
+
+        th{
+            font-size: 16px;
+        }
+
+        .cell-radio-class{
+            width: 25px;
+            margin-left: 3px;
+        }
+
+        .cell-button-class{
+            width: 35px;
+            margin-left: 1px;
+        }
+
+        #m-table {
+            width: 100%;
+        }
+
+
+
+        #m-table {
+            width: 100%;
+        }
+
+
+        #page-table {
+            width: 367px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        #image-coordinates {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            width: 300px;
+        }
+
+        #image-coordinates:hover {
+            width: 200px;
+            height: 298px;
+        }
+
+        #text_input{
+            margin-left: 5px;
+            width: 240px;
+        }
+
+        #send{
+            margin-left: 100px;
+            margin-right: 100px;
+            width: max-content;
+        }
+    </style>
 </head>
 <body>
 
@@ -67,11 +133,16 @@
 
                     <tr id="buttonRow">
                         <td colspan="4">Change R</td>
-                        <td><input class="cell-button-class" type="submit" name="answerR" value="1"></td>
-                        <td><input class="cell-button-class" type="submit" name="answerR" value="1.5"></td>
-                        <td><input class="cell-button-class" type="submit" name="answerR" value="2"></td>
-                        <td><input class="cell-button-class" type="submit" name="answerR" value="2.5"></td>
-                        <td><input class="cell-button-class" type="submit" name="answerR" value="3"></td>
+                        <td><input class="cell-button-class" type="button" onclick="setR(1);" value="1"></td>
+                        <td><input class="cell-button-class" type="button" onclick="setR(1.5);" value="1.5"></td>
+                        <td><input class="cell-button-class" type="button" onclick="setR(2);" value="2"></td>
+                        <td><input class="cell-button-class" type="button" onclick="setR(2.5);" value="2.5"></td>
+                        <td><input class="cell-button-class" type="button" onclick="setR(3);" value="3"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4"><input id="send" type="submit" value="Send"></td>
+                        <td colspan="6"><input id="vR" type="hidden" name="answerR" value="0"></td>
                     </tr>
                 </table>
             </form>

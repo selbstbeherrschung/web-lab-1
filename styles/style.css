@@ -88,3 +88,9 @@ th{
 #x-id{
     width: 19px;
 }
+
+#send{
+    margin-left: 100px;
+    margin-right: 100px;
+    width: max-content;
+}
