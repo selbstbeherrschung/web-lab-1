@@ -7,9 +7,6 @@
     </title>
     <link rel="icon" type="image/png" href="../resources/icon.png">
     <link href="../styles/style.css" rel="stylesheet" type="text/css">
-    <style>
-
-    </style>
 </head>
 <body>
 <table id="m-table" border="1">
