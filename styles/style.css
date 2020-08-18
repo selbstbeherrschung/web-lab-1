@@ -21,6 +21,7 @@ th{
 .cell-button-class{
     width: 35px;
     margin-left: 1px;
+    background-color: white;
 }
 
 .x-class{
@@ -56,7 +57,13 @@ th{
 }
 
 
-#page-table {
+#page-table-F {
+    width: 367px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#page-table-T {
     width: 367px;
     margin-right: auto;
     margin-left: auto;
@@ -89,8 +96,24 @@ th{
     width: 19px;
 }
 
-#send{
+.send{
     margin-left: 100px;
     margin-right: 100px;
     width: max-content;
+}
+
+.inputOk{
+    width: 35px;
+    margin-left: 1px;
+    background-color: green;
+}
+
+.inputNe{
+    width: 35px;
+    margin-left: 1px;
+    background-color: white;
+}
+
+.inputWar{
+    background-color: red;
 }
