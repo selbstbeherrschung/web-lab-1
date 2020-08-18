@@ -28,12 +28,12 @@ function make_shot($X, $Y, $R)
 function write_shot($shot)
 {
     $shot_elements = str_getcsv($shot, ' ');
-    echo '<tr><td class="x-class">' . $shot_elements[0] . '</td>';
-    echo '<td class="y-class">' . $shot_elements[1] . '</td>';
-    echo '<td class="r-class">' . $shot_elements[2] . '</td>';
-    echo '<td class="som-class">' . $shot_elements[3] . '</td>';
-    echo '<td class="stt-class">' . $shot_elements[4] . '</td>';
-    echo '<td class="sct-class">' . $shot_elements[5] . '</td></tr>';
+    echo '<tr><td class="x-class chooseable">' . $shot_elements[0] . '</td>';
+    echo '<td class="y-class chooseable">' . $shot_elements[1] . '</td>';
+    echo '<td class="r-class chooseable">' . $shot_elements[2] . '</td>';
+    echo '<td class="som-class chooseable">' . $shot_elements[3] . '</td>';
+    echo '<td class="stt-class chooseable">' . $shot_elements[4] . '</td>';
+    echo '<td class="sct-class chooseable">' . $shot_elements[5] . '</td></tr>';
 }
 
 function writePrevTable()

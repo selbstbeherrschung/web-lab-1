@@ -8,8 +8,149 @@
     </title>
     <link rel="icon" type="image/png" href="resources/icon.png">
     <script src="clientScript/Script.js"></script>
-    <link href="styles/style.css" rel="stylesheet">
+    <!--<link href="styles/style.css" rel="stylesheet">-->
     <style>
+
+        body{
+            font-family: message-box;
+        }
+
+        input{
+            font: caption;
+            font-size: 12px;
+        }
+
+        header{
+            font-family: sans-serif;
+            font-size: 20px;
+            color: darkblue;
+            text-align: center;
+        }
+
+        table{
+            font-size: 12px;
+        }
+
+        th{
+            font-size: 16px;
+            border-style: solid;
+            background: #D8E6F3;
+        }
+
+        .chooseable:hover{
+            background-color: lightblue;
+        }
+
+        .cell-radio-text-class{
+            width: 25px;
+            text-align: center;
+        }
+
+        .cell-radio-class{
+            width: 25px;
+            margin-left: 4px;
+        }
+
+        .cell-button-class{
+            width: 35px;
+            margin-left: 1px;
+            background-color: white;
+        }
+
+        .x-class{
+            width: 17px;
+        }
+
+        .y-class{
+            width: 17px;
+        }
+
+        .r-class{
+            width: 20px;
+        }
+
+        .som-class{
+            width: 30px;
+        }
+
+        .stt-class{
+            width: 145px;
+        }
+
+        .sct-class{
+            width: 75px;
+        }
+
+        .warning{
+            background-color: red;
+        }
+
+        #m-table {
+            width: 100%;
+        }
+
+
+        #page-table-F {
+            width: 367px;
+            margin-right: auto;
+            margin-left: auto;
+            border-collapse: collapse;
+        }
+
+        #page-table-T {
+            width: 367px;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        #image-coordinates {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            width: 300px;
+        }
+
+        #image-coordinates:hover {
+            opacity: 0.5;
+        }
+
+        #scroll-container {
+            width: 350px;
+            height: 300px;
+            overflow-y: scroll;
+            background-color: lightcyan;
+        }
+
+        #text_input{
+            margin-left: 5px;
+            width: 240px;
+        }
+
+        #x-id{
+            width: 19px;
+        }
+
+        .send{
+            margin-left: 50px;
+            width: max-content;
+        }
+
+        .inputOk{
+            width: 35px;
+            margin-left: 1px;
+            background-color: green;
+        }
+
+        .inputNe{
+            width: 35px;
+            margin-left: 1px;
+            background-color: white;
+        }
+
+        .inputWar{
+            background-color: red;
+        }
 
     </style>
 </head>
@@ -38,44 +179,44 @@
 
                         <tr>
                             <td>Change</td>
-                            <td class="cell-radio-class">-4</td>
-                            <td class="cell-radio-class">-3</td>
-                            <td class="cell-radio-class">-2</td>
-                            <td class="cell-radio-class">-1</td>
-                            <td class="cell-radio-class">0</td>
-                            <td class="cell-radio-class">1</td>
-                            <td class="cell-radio-class">2</td>
-                            <td class="cell-radio-class">3</td>
-                            <td class="cell-radio-class">4</td>
+                            <td class="cell-radio-text-class chooseable">-4</td>
+                            <td class="cell-radio-text-class chooseable">-3</td>
+                            <td class="cell-radio-text-class chooseable">-2</td>
+                            <td class="cell-radio-text-class chooseable">-1</td>
+                            <td class="cell-radio-text-class chooseable">0</td>
+                            <td class="cell-radio-text-class chooseable">1</td>
+                            <td class="cell-radio-text-class chooseable">2</td>
+                            <td class="cell-radio-text-class chooseable">3</td>
+                            <td class="cell-radio-text-class chooseable">4</td>
                         </tr>
 
                         <tr>
                             <td>X</td>
-                            <td><input class="cell-radio-class" type="radio" name="answerX" value="-4"></td>
-                            <td><input class="cell-radio-class" type="radio" name="answerX" value="-3"></td>
-                            <td><input class="cell-radio-class" type="radio" name="answerX" value="-2"></td>
-                            <td><input class="cell-radio-class" type="radio" name="answerX" value="-1"></td>
-                            <td><input class="cell-radio-class" type="radio" name="answerX" value="0" checked="checked">
-                            </td>
-                            <td><input class="cell-radio-class" type="radio" name="answerX" value="1"></td>
-                            <td><input class="cell-radio-class" type="radio" name="answerX" value="2"></td>
-                            <td><input class="cell-radio-class" type="radio" name="answerX" value="3"></td>
-                            <td><input class="cell-radio-class" type="radio" name="answerX" value="4"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="-4"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="-3"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="-2"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="-1"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="0" checked="checked"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="1"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="2"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="3"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="4"></td>
                         </tr>
 
                         <tr>
                             <td colspan="3">Change Y (-5;3)</td>
-                            <td colspan="7"><input id="text_input" type="text" name="answerY" value="0">
+                            <td class="chooseable" colspan="7"><input id="text_input" type="text" name="answerY" value="0">
                             </td>
                         </tr>
 
                         <tr id="buttonRow">
                             <td colspan="4">Change R</td>
-                            <td><input class="cell-button-class" type="button" name="rChoose" onclick="setR(1);" value="1"></td>
-                            <td><input class="cell-button-class" type="button" name="rChoose" onclick="setR(1.5);" value="1.5"></td>
-                            <td><input class="cell-button-class" type="button" name="rChoose" onclick="setR(2);" value="2"></td>
-                            <td><input class="cell-button-class" type="button" name="rChoose" onclick="setR(2.5);" value="2.5"></td>
-                            <td><input class="cell-button-class" type="button" name="rChoose" onclick="setR(3);" value="3"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(1);" value="1"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(1.5);" value="1.5"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(2);" value="2"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(2.5);" value="2.5"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(3);" value="3"></td>
+                            <td></td>
                         </tr>
 
                         <tr>

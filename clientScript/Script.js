@@ -49,15 +49,13 @@ const submit = function (e) {
 
     let xhr = new XMLHttpRequest();
 
-    let url = new URL('/web-lab-1/serverScript/handler.php', servDom);
+    let url = new URL('/web-lab-1/serverScript/handlerS.php', servDom);
 
     url.searchParams.append('answerX', xVal);
     url.searchParams.append('answerY', yVal);
     url.searchParams.append('answerR', rVal);
 
     xhr.open('GET', url);
-
-    alert("Open: " + url + " ");
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
