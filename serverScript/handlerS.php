@@ -39,14 +39,13 @@ function write_shot($shot)
 function writePrevTable()
 {
     echo '<table id="page-table-T" border="1">';
-    echo '<tr><th id="x-id">' . "X" . '</th>';
+    echo '<thead><tr><th id="x-id">' . "X" . '</th>';
     echo '<th class="y-class">' . "Y" . '</th>';
     echo '<th class="r-class">' . "R" . '</th>';
     echo '<th class="som-class">' . "Y/N" . '</th>';
     echo '<th class="stt-class">' . "Start time" . '</th>';
     echo '<th class="sct-class">' . "Script time" . '</th>';
-    echo '<th width="20px"></th></tr>';
-    echo '<tr><td colspan="7"><div id="scroll-container"><table border="1">';
+    echo '</th></tr></thead>';
 
     if(!count($_SESSION['history'])){
         return;
@@ -69,6 +68,7 @@ $XGet = (int)htmlspecialchars($_GET['answerX']);
 $YGet = (double)htmlspecialchars($_GET['answerY']);
 $RGet = (float)htmlspecialchars($_GET['answerR']);
 
+date_default_timezone_set("Europe/Moscow");
 $start = date("d.m.Y;H:i:s:u");
 $time = microtime(true);
 
@@ -83,14 +83,12 @@ if (isset($_GET['answerX']) and isset($_GET['answerY']) and isset($_GET['answerR
         write_shot($shot);
 
         array_push($_SESSION['history'], $shot);
-        echo '</table></div></td></tr></table>';
+        echo '</table>';
     } else {
-        echo '</table></div></td></tr>';
         echo '<tr><td colspan="6"><div class="warning">' . "Wrong vars response: X=" . $XGet . " Y=" . $YGet . " R=" . $RGet . '</div></td></tr>';
         echo '</table>';
     }
 } else {
-    echo '</table></div></td></tr>';
     echo '<tr><td colspan="6"><div class="warning">' . "Variables doesn't set: X=" . $XGet . " Y=" . $YGet . " R=" . $RGet . ' '. $_GET . $_POST. '</div></td></tr>';
     echo '</table>';
 }
