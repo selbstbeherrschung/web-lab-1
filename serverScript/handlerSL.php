@@ -38,12 +38,6 @@ function write_shot($shot)
 
 function writePrevTable()
 {
-    writeHead();
-    writeBody();
-}
-
-function writeHead()
-{
     echo '<table id="page-table-T" border="1">';
     echo '<thead><tr><th id="x-id" class="stickyTh">' . "X" . '</th>';
     echo '<th class="y-class stickyTh">' . "Y" . '</th>';
@@ -54,16 +48,13 @@ function writeHead()
     echo '</th></tr></thead>';
     echo '<tbody>';
 
-}
-
-function writeBody()
-{
-    if (!count($_SESSION['history'])) {
+    if(!count($_SESSION['history'])){
         return;
     }
 
-    for ($i = count($_SESSION['history'])-1; $i > 0; $i--) {
-        write_shot($_SESSION['history'][$i]);
+    $prev_shots = $_SESSION['history'];
+    foreach ($prev_shots as $shot) {
+        write_shot($shot);
     }
 }
 
@@ -82,6 +73,7 @@ date_default_timezone_set("Europe/Moscow");
 $start = date("d.m.Y;H:i:s:u");
 $time = microtime(true);
 
+writePrevTable();
 
 if (isset($_GET['answerX']) and isset($_GET['answerY']) and isset($_GET['answerR'])) {
     if ($XGet >= -4 and $XGet <= 4 and $YGet >= -5 and $YGet <= 3 and $RGet >= 1 and $RGet <= 3) {
@@ -89,23 +81,16 @@ if (isset($_GET['answerX']) and isset($_GET['answerY']) and isset($_GET['answerR
         $shot = make_shot($XGet, $YGet, $RGet);
         $time = microtime(true) - $time;
         $shot .= $start . ' ' . number_format($time, 10);
-
-        writeHead();
-
         write_shot($shot);
-
-        writeBody();
 
         array_push($_SESSION['history'], $shot);
         echo '</tbody></table>';
     } else {
-        writePrevTable();
         echo '<tr><td colspan="6"><div class="warning">' . "Wrong vars response: X=" . $XGet . " Y=" . $YGet . " R=" . $RGet . '</div></td></tr>';
         echo '</table>';
     }
 } else {
-    writePrevTable();
-    echo '<tr><td colspan="6"><div class="warning">' . "Variables doesn't set: X=" . $XGet . " Y=" . $YGet . " R=" . $RGet . ' ' . $_GET . $_POST . '</div></td></tr>';
+    echo '<tr><td colspan="6"><div class="warning">' . "Variables doesn't set: X=" . $XGet . " Y=" . $YGet . " R=" . $RGet . ' '. $_GET . $_POST. '</div></td></tr>';
     echo '</table>';
 }
 ?>
