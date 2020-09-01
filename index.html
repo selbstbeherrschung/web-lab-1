@@ -101,10 +101,8 @@
             width: 400px;
             height: 300px;
             border-spacing: 2px;
-            margin-right: auto;
-            margin-left: auto;
-            overflow-y: scroll;
-            background-color: lightcyan;
+
+
         }
 
         #image-coordinates {
@@ -151,6 +149,37 @@
             background-color: red;
         }
 
+        #result{
+            height: 300px;
+            width: 405px;
+            margin-right: auto;
+            margin-left: auto;
+            background-color: lightcyan;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .custom_scrollbar::-webkit-scrollbar {
+            width: 5px;
+
+        }
+        .custom_scrollbar::-webkit-scrollbar-track {
+            background-color: rgb(255, 255, 255);
+            -webkit-border-radius: 1px;
+        }
+        .custom_scrollbar::-webkit-scrollbar-thumb:vertical {
+            background-color: rgb(142, 142, 142);
+            -webkit-border-radius: 0px;
+            -webkit-width:5;
+        }
+        .custom_scrollbar::-webkit-scrollbar-thumb:vertical:hover {
+            background: rgba(0, 245, 255, 0.65);
+        }
+
+        .stickyTh {
+            position: sticky;
+            top: 0;
+        }
 
     </style>
 </head>
@@ -245,16 +274,16 @@
             </div>
         </td>
         <td>
-            <div id="result">
+            <div id="result"  class="custom_scrollbar">
                 <table id="page-table-T" border="1">
-                    <thead>
+                    <thead class="header" id="headerTable">
                     <tr>
-                        <th id="x-id">X</th>
-                        <th class="y-class">Y</th>
-                        <th class="r-class">R</th>
-                        <th class="som-class">Y/N</th>
-                        <th class="stt-class">Start time</th>
-                        <th class="sct-class">Script time</th>
+                        <th id="x-id" class="stickyTh">X</th>
+                        <th class="y-class stickyTh">Y</th>
+                        <th class="r-class stickyTh">R</th>
+                        <th class="som-class stickyTh">Y/N</th>
+                        <th class="stt-class stickyTh">Start time</th>
+                        <th class="sct-class stickyTh">Script time</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -267,5 +296,6 @@
     </tr>
 
 </table>
+
 </body>
 </HTML>

@@ -39,13 +39,14 @@ function write_shot($shot)
 function writePrevTable()
 {
     echo '<table id="page-table-T" border="1">';
-    echo '<thead><tr><th id="x-id">' . "X" . '</th>';
-    echo '<th class="y-class">' . "Y" . '</th>';
-    echo '<th class="r-class">' . "R" . '</th>';
-    echo '<th class="som-class">' . "Y/N" . '</th>';
-    echo '<th class="stt-class">' . "Start time" . '</th>';
-    echo '<th class="sct-class">' . "Script time" . '</th>';
+    echo '<thead><tr><th id="x-id" class="stickyTh">' . "X" . '</th>';
+    echo '<th class="y-class stickyTh">' . "Y" . '</th>';
+    echo '<th class="r-class stickyTh">' . "R" . '</th>';
+    echo '<th class="som-class stickyTh">' . "Y/N" . '</th>';
+    echo '<th class="stt-class stickyTh">' . "Start time" . '</th>';
+    echo '<th class="sct-class stickyTh">' . "Script time" . '</th>';
     echo '</th></tr></thead>';
+    echo '<tbody>';
 
     if(!count($_SESSION['history'])){
         return;
@@ -83,7 +84,7 @@ if (isset($_GET['answerX']) and isset($_GET['answerY']) and isset($_GET['answerR
         write_shot($shot);
 
         array_push($_SESSION['history'], $shot);
-        echo '</table>';
+        echo '</tbody></table>';
     } else {
         echo '<tr><td colspan="6"><div class="warning">' . "Wrong vars response: X=" . $XGet . " Y=" . $YGet . " R=" . $RGet . '</div></td></tr>';
         echo '</table>';
