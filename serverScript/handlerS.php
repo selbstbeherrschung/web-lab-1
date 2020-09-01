@@ -47,14 +47,17 @@ function writePrevTable()
     echo '<th class="sct-class">' . "Script time" . '</th>';
     echo '<th width="20px"></th></tr>';
     echo '<tr><td colspan="7"><div id="scroll-container"><table border="1">';
-    if(!$_SESSION['history'].ob_get_length()){
+
+    if(!count($_SESSION['history'])){
         return;
     }
+
     $prev_shots = $_SESSION['history'];
     foreach ($prev_shots as $shot) {
         write_shot($shot);
     }
 }
+
 
 session_start();
 
@@ -78,6 +81,7 @@ if (isset($_GET['answerX']) and isset($_GET['answerY']) and isset($_GET['answerR
         $time = microtime(true) - $time;
         $shot .= $start . ' ' . number_format($time, 10);
         write_shot($shot);
+
         array_push($_SESSION['history'], $shot);
         echo '</table></div></td></tr></table>';
     } else {

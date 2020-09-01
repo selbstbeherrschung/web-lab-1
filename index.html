@@ -11,77 +11,77 @@
     <!--<link href="styles/style.css" rel="stylesheet">-->
     <style>
 
-        body{
+        body {
             font-family: message-box;
         }
 
-        input{
+        input {
             font: caption;
             font-size: 12px;
         }
 
-        header{
+        header {
             font-family: sans-serif;
             font-size: 20px;
             color: darkblue;
             text-align: center;
         }
 
-        table{
+        table {
             font-size: 12px;
         }
 
-        th{
+        th {
             font-size: 16px;
             border-style: solid;
             background: #D8E6F3;
         }
 
-        .chooseable:hover{
+        .chooseable:hover {
             background-color: lightblue;
         }
 
-        .cell-radio-text-class{
+        .cell-radio-text-class {
             width: 25px;
             text-align: center;
         }
 
-        .cell-radio-class{
+        .cell-radio-class {
             width: 25px;
             margin-left: 4px;
         }
 
-        .cell-button-class{
+        .cell-button-class {
             width: 35px;
             margin-left: 1px;
             background-color: white;
         }
 
-        .x-class{
+        .x-class {
             width: 17px;
         }
 
-        .y-class{
+        .y-class {
             width: 17px;
         }
 
-        .r-class{
+        .r-class {
             width: 20px;
         }
 
-        .som-class{
+        .som-class {
             width: 30px;
         }
 
-        .stt-class{
+        .stt-class {
             width: 145px;
         }
 
-        .sct-class{
+        .sct-class {
             width: 75px;
         }
 
-        .warning{
+        .warning {
             background-color: red;
         }
 
@@ -122,33 +122,34 @@
             background-color: lightcyan;
         }
 
-        #text_input{
+        #text_input {
             margin-left: 5px;
             width: 240px;
         }
 
-        #x-id{
+        #x-id {
             width: 19px;
         }
 
-        .send{
+        .send {
             margin-left: 50px;
             width: max-content;
         }
 
-        .inputOk{
+
+        .inputOk {
             width: 35px;
             margin-left: 1px;
             background-color: green;
         }
 
-        .inputNe{
+        .inputNe {
             width: 35px;
             margin-left: 1px;
             background-color: white;
         }
 
-        .inputWar{
+        .inputWar {
             background-color: red;
         }
 
@@ -192,30 +193,45 @@
 
                         <tr>
                             <td>X</td>
-                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="-4"></td>
-                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="-3"></td>
-                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="-2"></td>
-                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="-1"></td>
-                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="0" checked="checked"></td>
-                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="1"></td>
-                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="2"></td>
-                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="3"></td>
-                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="4"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX"
+                                                          value="-4"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX"
+                                                          value="-3"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX"
+                                                          value="-2"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX"
+                                                          value="-1"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX" value="0"
+                                                          checked="checked"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX"
+                                                          value="1"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX"
+                                                          value="2"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX"
+                                                          value="3"></td>
+                            <td class="chooseable"><input class="cell-radio-class" type="radio" name="answerX"
+                                                          value="4"></td>
                         </tr>
 
                         <tr>
                             <td colspan="3">Change Y (-5;3)</td>
-                            <td class="chooseable" colspan="7"><input id="text_input" type="text" name="answerY" value="0">
+                            <td class="chooseable" colspan="7"><input id="text_input" type="text" name="answerY"
+                                                                      value="0">
                             </td>
                         </tr>
 
                         <tr id="buttonRow">
                             <td colspan="4">Change R</td>
-                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(1);" value="1"></td>
-                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(1.5);" value="1.5"></td>
-                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(2);" value="2"></td>
-                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(2.5);" value="2.5"></td>
-                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose" onclick="setR(3);" value="3"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose"
+                                                          onclick="setR(1);" value="1"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose"
+                                                          onclick="setR(1.5);" value="1.5"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose"
+                                                          onclick="setR(2);" value="2"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose"
+                                                          onclick="setR(2.5);" value="2.5"></td>
+                            <td class="chooseable"><input class="cell-button-class" type="button" name="rChoose"
+                                                          onclick="setR(3);" value="3"></td>
                             <td></td>
                         </tr>
 
@@ -244,8 +260,6 @@
                     <tr>
                         <td colspan="7">
                             <div id="scroll-container">
-                                <table border="1">
-                                </table>
                             </div>
                         </td>
                     </tr>

@@ -1,94 +1,126 @@
-header {
+//compress:false
+
+@page-table-width: 367px;
+@x-text-width: 17px;
+@r-text-width: 20px;
+@scrollbar-width: 20px;
+@som-width: 30px;
+
+header{
   font-family: sans-serif;
   font-size: 20px;
   color: darkblue;
   text-align: center;
 }
-table {
+
+table{
   font-size: 12px;
 }
-th {
+
+th{
   font-size: 16px;
 }
-.cell-radio-class {
+
+.cell-radio-class{
   width: 25px;
   margin-left: 3px;
 }
-.cell-button-class {
+
+.cell-button-class{
   width: 35px;
   margin-left: 1px;
   background-color: white;
 }
-.x-class {
-  width: 17px;
+
+.x-class{
+  width: @x-text-width;
 }
-.y-class {
-  width: 17px;
+
+.y-class{
+  width: @x-text-width;
 }
-.r-class {
-  width: 20px;
+
+.r-class{
+  width: @x-text-width + 3px;
 }
-.som-class {
-  width: 30px;
+
+.som-class{
+  width: @som-width;
 }
-.stt-class {
+
+.stt-class{
   width: 145px;
 }
-.sct-class {
+
+.sct-class{
   width: 75px;
 }
-.warning {
+
+.warning{
   background-color: red;
 }
+
 #m-table {
   width: 100%;
 }
+
+
 #page-table-F {
-  width: 367px;
+  width: @page-table-width;
   margin-right: auto;
   margin-left: auto;
 }
+
 #page-table-T {
-  width: 367px;
+  width: @page-table-width;
   margin-right: auto;
   margin-left: auto;
 }
+
 #image-coordinates {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  width: 300px;
+  width: @page-table-width - 67px;
 }
+
 #image-coordinates:hover {
   opacity: 0.5;
 }
+
 #scroll-container {
   width: 350px;
   height: 300px;
   overflow-y: scroll;
 }
-#text_input {
+
+#text_input{
   margin-left: 5px;
   width: 240px;
 }
-#x-id {
+
+#x-id{
   width: 19px;
 }
-.send {
+
+.send{
   margin-left: 100px;
   margin-right: 100px;
   width: max-content;
 }
-.inputOk {
+
+.inputOk{
   width: 35px;
   margin-left: 1px;
   background-color: green;
 }
-.inputNe {
+
+.inputNe{
   width: 35px;
   margin-left: 1px;
   background-color: white;
 }
-.inputWar {
+
+.inputWar{
   background-color: red;
 }
