@@ -37,10 +37,13 @@
             background: #D8E6F3;
         }
 
+        /*Реакция на выбор клетки
+        Для таблицы результатов и элементов ввода*/
         .chooseable:hover {
             background-color: lightblue;
         }
 
+        /*Обрисовка подписей и элементов radio-button*/
         .cell-radio-text-class {
             width: 25px;
             text-align: center;
@@ -51,12 +54,14 @@
             margin-left: 4px;
         }
 
+        /*Кнопки выбора*/
         .cell-button-class {
             width: 35px;
             margin-left: 1px;
             background-color: white;
         }
 
+        /*Классы ячеек колонок таблицы результатов*/
         .x-class {
             width: 5%;
         }
@@ -81,15 +86,17 @@
             width: 20%;
         }
 
+        /*Для ввывода ошибок переданных данных*/
         .warning {
             background-color: red;
         }
 
+        /*Главная таблица вёрстки*/
         #m-table {
             width: 100%;
         }
 
-
+        /*Таблица формы и результата соответственно*/
         #page-table-F {
             width: 367px;
             margin-right: auto;
@@ -101,10 +108,9 @@
             width: 400px;
             /*height: 300px;*/
             border-spacing: 2px;
-
-
         }
 
+        /*Картинка мишени*/
         #image-coordinates {
             display: block;
             margin-right: auto;
@@ -117,22 +123,24 @@
         }
 
 
-
+        /*Ввод текста*/
         #text_input {
             margin-left: 5px;
             width: 240px;
         }
 
+        /*Первая ячейка шапки таблицы результата*/
         #x-id {
             width: 6%;
         }
 
+        /*Кнопка отправки*/
         .send {
             margin-left: 50px;
             width: max-content;
         }
 
-
+        /*Элементы ввода в зависимости от верности введённых данных*/
         .inputOk {
             width: 35px;
             margin-left: 1px;
@@ -149,6 +157,7 @@
             background-color: red;
         }
 
+        /*Таблица результатов*/
         #result{
             height: 300px;
             width: 405px;
@@ -159,23 +168,30 @@
             overflow-x: hidden;
         }
 
+
+        /*Скроллбар псевдоэлементом
+        Вынесен справа, чтобы не мешал внутри блока своей шириной*/
         .custom_scrollbar::-webkit-scrollbar {
             width: 5px;
 
         }
+
         .custom_scrollbar::-webkit-scrollbar-track {
             background-color: rgb(255, 255, 255);
             -webkit-border-radius: 1px;
         }
+
         .custom_scrollbar::-webkit-scrollbar-thumb:vertical {
             background-color: rgb(142, 142, 142);
-            -webkit-border-radius: 0px;
-            -webkit-width:5;
+            -webkit-border-radius: 0;
+            -webkit-width:5px;
         }
+
         .custom_scrollbar::-webkit-scrollbar-thumb:vertical:hover {
             background: rgba(0, 245, 255, 0.65);
         }
 
+        /*Липкий элемент*/
         .stickyTh {
             position: sticky;
             top: 0;
@@ -189,6 +205,7 @@
 
     <tr>
         <td colspan="2">
+            <!--Шапка -->
             <header>
                 Rogachev Kirill Olegovich P3230 2621
             </header>
@@ -197,6 +214,7 @@
 
     <tr>
         <td>
+            <!--Форма для ввода данных выстрела-->
             <div>
                 <form onsubmit="checkText(this);return false;">
                     <table id="page-table-F" border="1">
@@ -273,7 +291,9 @@
                 </form>
             </div>
         </td>
+
         <td>
+            <!--Таблица результатов -->
             <div id="result"  class="custom_scrollbar">
                 <table id="page-table-T" border="1">
                     <thead class="header" id="headerTable">

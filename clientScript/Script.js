@@ -2,7 +2,7 @@ var checkSetR = false;
 var servDom = 'http://localhost';
 
 
-function checkText() {
+function checkText() { //Проверка введённого в поле и реакция
     var str = text_input.value;
     if (isNaN(str)) {
         alert(str + " is wrong. You should write int number!");
@@ -23,7 +23,7 @@ function checkText() {
     return false;
 }
 
-function setR(int) {
+function setR(int) {    //Установка значения R получаемого от кнопок. Скрипт запускается при нажатии на кнопку
     document.getElementById("vR").setAttribute("value", int);
     var rNames = document.getElementsByName("rChoose");
     for (let i = 0; i < rNames.length; i++) {
@@ -34,8 +34,10 @@ function setR(int) {
 }
 
 const submit = function (e) {
+    //Валидация текста
     if (!checkText()) return e.preventDefault();
 
+    //Валидация X и его получения если верен
     let xVal;
     let ansX = document.getElementsByName("answerX");
     for (let i = 0; i < ansX.length; i++) {
@@ -44,6 +46,8 @@ const submit = function (e) {
             break;
         }
     }
+
+    //Формирование AJUX запроса серверу
     var yVal = document.getElementById("text_input").value;
     var rVal = document.getElementById("vR").value;
 
@@ -66,6 +70,7 @@ const submit = function (e) {
     xhr.send()
 }
 
+//Добавление скрипта для валидации перед отправкой
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('submitButton').addEventListener('click', submit);
 });

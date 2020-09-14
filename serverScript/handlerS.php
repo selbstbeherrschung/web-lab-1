@@ -2,6 +2,7 @@
 
 // x , y , r , shot or miss , start , time
 
+//Проверка попадания
 function make_shot($X, $Y, $R)
 {
     $result = $X . ' ' . $Y . ' ' . $R . ' ';
@@ -25,6 +26,8 @@ function make_shot($X, $Y, $R)
     return $result;
 }
 
+//Строка таблицы одного выстрела
+//csv для хранения и обработки записи
 function write_shot($shot)
 {
     $shot_elements = str_getcsv($shot, ' ');
@@ -36,12 +39,14 @@ function write_shot($shot)
     echo '<td class="sct-class chooseable">' . $shot_elements[5] . '</td></tr>';
 }
 
+//Создание таблицы сохраннёных выстрелов
 function writePrevTable()
 {
     writeHead();
     writeBody();
 }
 
+//Шапка таблицы результатов
 function writeHead()
 {
     echo '<table id="page-table-T" border="1">';
@@ -56,17 +61,21 @@ function writeHead()
 
 }
 
+//Тело таблицы результатов
 function writeBody()
 {
     if (!count($_SESSION['history'])) {
         return;
     }
 
+    //Начинает с самого позднего, что позволяет выводить самые последние наверху
+    //Повышает читаемость
     for ($i = count($_SESSION['history'])-1; $i > 0; $i--) {
         write_shot($_SESSION['history'][$i]);
     }
 }
 
+//Старт сесси, проверка сессии
 
 session_start();
 
@@ -74,37 +83,39 @@ if (!isset($_SESSION['history'])) {
     $_SESSION['history'] = array();
 }
 
+//Получение аргументов
 $XGet = (int)htmlspecialchars($_GET['answerX']);
 $YGet = (double)htmlspecialchars($_GET['answerY']);
 $RGet = (float)htmlspecialchars($_GET['answerR']);
 
+//"Якорь времени" и время начала
 date_default_timezone_set("Europe/Moscow");
 $start = date("d.m.Y;H:i:s:u");
 $time = microtime(true);
 
-
+//Валидация со стороны сервера
 if (isset($_GET['answerX']) and isset($_GET['answerY']) and isset($_GET['answerR'])) {
     if ($XGet >= -4 and $XGet <= 4 and $YGet >= -5 and $YGet <= 3 and $RGet >= 1 and $RGet <= 3) {
 
-        $shot = make_shot($XGet, $YGet, $RGet);
+        $shot = make_shot($XGet, $YGet, $RGet);                     //Выстрел и его результаты
         $time = microtime(true) - $time;
-        $shot .= $start . ' ' . number_format($time, 10);
+        $shot .= $start . ' ' . number_format($time, 10);   //Получение времени
 
         writeHead();
 
-        write_shot($shot);
+        write_shot($shot); //Запись текущего выстрела
 
         writeBody();
 
-        array_push($_SESSION['history'], $shot);
+        array_push($_SESSION['history'], $shot);               //Сохранение
         echo '</tbody></table>';
     } else {
-        writePrevTable();
+        writePrevTable();   //Случай выхода за пределы диапозонов
         echo '<tr><td colspan="6"><div class="warning">' . "Wrong vars response: X=" . $XGet . " Y=" . $YGet . " R=" . $RGet . '</div></td></tr>';
         echo '</table>';
     }
 } else {
-    writePrevTable();
+    writePrevTable();   //Случай не инициализации переменных
     echo '<tr><td colspan="6"><div class="warning">' . "Variables doesn't set: X=" . $XGet . " Y=" . $YGet . " R=" . $RGet . ' ' . $_GET . $_POST . '</div></td></tr>';
     echo '</table>';
 }
